@@ -62,6 +62,8 @@
       thisProduct.renderInMenu();
 
       //console.log('new Product:', thisProduct);
+
+      thisProduct.initAccordion();
     }
 
     renderInMenu(){
@@ -85,18 +87,18 @@
       menuContainer.appendChild(thisProduct.element);
     };
 
-    inintAccordion (){
+    initAccordion (){
       const thisProduct = this;
 
       /* find the clickable trigger (the element that should react to clicking) */
 
       const clickableTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
-      console.log(clickableTrigger);
+      //console.log(clickableTrigger);
 
       /* START: click event listener to trigger */
 
-      thisProduct.accordionTrigger.addEventListener('click',function(event){
-      console.log(thisProduct.accordionTrigger);
+      clickableTrigger.addEventListener('click',function(event){
+      //console.log(clickableTrigger);
 
         /* prevent default action for event */
 
@@ -104,13 +106,13 @@
 
         /* toggle active class on element of thisProduct */
 
-        thisProduct.element.classList.toogle('active');
-        console.log(thisProduct);
+        thisProduct.element.classList.toggle('active');
+        //console.log(thisProduct);
 
         /* find all active products */
 
         const activeProducts = document.querySelectorAll('article.active');
-        console.log(allActiveProducts);
+        //console.log(activeProducts);
 
         /* START LOOP: for each active product */
 
