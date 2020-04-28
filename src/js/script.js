@@ -1,7 +1,5 @@
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
-import { utils } from "stylelint";
-
 {
   'use strict';
 
@@ -63,7 +61,7 @@ import { utils } from "stylelint";
 
       thisProduct.renderInMenu();
 
-      console.log('new Product:', thisProduct);
+      //console.log('new Product:', thisProduct);
     }
 
     renderInMenu(){
@@ -86,12 +84,61 @@ import { utils } from "stylelint";
 
       menuContainer.appendChild(thisProduct.element);
     };
+
+    inintAccordion (){
+      const thisProduct = this;
+
+      /* find the clickable trigger (the element that should react to clicking) */
+
+      const clickableTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
+      console.log(clickableTrigger);
+
+      /* START: click event listener to trigger */
+
+      thisProduct.accordionTrigger.addEventListener('click',function(event){
+      console.log(thisProduct.accordionTrigger);
+
+        /* prevent default action for event */
+
+        event.preventDefault();
+
+        /* toggle active class on element of thisProduct */
+
+        thisProduct.element.classList.toogle('active');
+        console.log(thisProduct);
+
+        /* find all active products */
+
+        const activeProducts = document.querySelectorAll('article.active');
+        console.log(allActiveProducts);
+
+        /* START LOOP: for each active product */
+
+        for(let activeProduct of activeProducts){
+
+          /* START: if the active product isn't the element of thisProduct */
+
+          if(activeProduct !== thisProduct.element){
+
+            /* remove class active for the active product */
+
+            activeProduct.classList.remove('active');
+
+          /* END: if the active product isn't the element of thisProduct */
+          }
+
+        /* END LOOP: for each active product */
+        }
+
+      /* END: click event listener to trigger */
+      })
+    }
   }
 
   const app = {
     initMenu: function(){
       const thisApp = this;
-      console.log('thisApp.data:', thisApp.data);
+      //console.log('thisApp.data:', thisApp.data);
 
       for(let productData in thisApp.data.products){
         new Product(productData, thisApp.data.products[productData]);
@@ -106,11 +153,11 @@ import { utils } from "stylelint";
 
     init: function(){
       const thisApp = this;
-      console.log('*** App starting ***');
-      console.log('thisApp:', thisApp);
-      console.log('classNames:', classNames);
-      console.log('settings:', settings);
-      console.log('templates:', templates);
+      // console.log('*** App starting ***');
+      // console.log('thisApp:', thisApp);
+      // console.log('classNames:', classNames);
+      // console.log('settings:', settings);
+      // console.log('templates:', templates);
 
       thisApp.initData();
       thisApp.initMenu();
