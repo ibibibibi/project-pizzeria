@@ -23,8 +23,8 @@ dataSource.products = {
         label: 'Coffee type',
         type: 'radios',
         options: {
-          latte: {label: 'Latte', price: 1, default: true},
-          cappuccino: {label: 'Cappuccino', price: 1},
+          latte: {label: 'Oat latte', price: 1, default: true},
+          cappuccino: {label: 'Oat cappuccino', price: 1},
           espresso: {label: 'Espresso', price: 1},
           macchiato : {label: 'Macchiato ', price: 1},
         },
@@ -39,7 +39,7 @@ dataSource.products = {
       '<img class="active" src="images/pizza/crust.svg">',
       '<img class="active sauce-tomato" src="images/pizza/tomato-sauce.svg">',
       '<img class="active sauce-cream" src="images/pizza/sour-cream.svg">',
-      '<img class="active toppings-salami" src="images/pizza/salami.svg">',
+      '<img class="active toppings-freshTomato" src="images/pizza/salami.svg">',
       '<img class="active toppings-olives" src="images/pizza/olives.svg">',
       '<img class="active toppings-redPeppers" src="images/pizza/red-peppers.svg">',
       '<img class="active toppings-greenPeppers" src="images/pizza/green-peppers.svg">',
@@ -64,7 +64,7 @@ dataSource.products = {
           greenPeppers: {label: 'Green peppers', price: 2, default: true},
           mushrooms: {label: 'Mushrooms', price: 2, default: true},
           basil: {label: 'Fresh basil', price: 2, default: true},
-          salami: {label: 'Salami', price: 3},
+          freshTomato: {label: 'Fresh tomato', price: 3},
         },
       },
       crust: {
