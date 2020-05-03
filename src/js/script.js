@@ -288,8 +288,8 @@
       thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
 
-      console.log('amountWidget:',thisWidget);
-      console.log('constructor argument:', element);
+      //console.log('amountWidget:',thisWidget);
+      //console.log('constructor argument:', element);
     }
 
     /* FIND WIDGET ELEMENTS */
@@ -345,6 +345,26 @@
 
       const event = new Event('updated');
       thisWidget.element.dispatchEvent(event);
+    }
+  }
+
+  class Cart{
+    constructor(element){
+      const thisCart = this;
+
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+      
+      console.log('new cart:', thisCart);
+    }
+
+    getElements(element){
+      const thisCart = this;
+
+      thisCart.dom = {};
+
+      thisCart.dom.wrapper = element;
     }
   }
 
