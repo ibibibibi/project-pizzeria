@@ -3,8 +3,8 @@ const dataSource = {}; // eslint-disable-line no-unused-vars
 dataSource.products = {
   cake: {
     class: 'small',
-    name: 'Zio Stefano\'s Doughnut',
-    price: 9,
+    name: 'Homemade cake',
+    price: 4,
     description: 'Treat yourself with this soft, freshly baked cookie. The recipe has been handed down from generation to generation in our family and it has won us several first place prizes in local competitions.',
     images: [
       '<img class="active" src="images/doughnut.svg">',
@@ -12,8 +12,8 @@ dataSource.products = {
   },
   breakfast: {
     class: 'small',
-    name: 'Zia Giulia\'s Breakfast',
-    price: 9,
+    name: 'Princess Breakfast',
+    price: 8,
     description: 'There\'s no better way to start your day than indulging yourself with a cup of fresh Italian coffee and crispy waffels. Made just for you on the spot, this breakfast combo has been our guests\' favorite for over 50 years.',
     images: [
       '<img class="active" src="images/breakfast.svg">',
@@ -23,18 +23,18 @@ dataSource.products = {
         label: 'Coffee type',
         type: 'radios',
         options: {
-          latte: {label: 'Oat latte', price: 1, default: true},
-          cappuccino: {label: 'Oat cappuccino', price: 1},
-          espresso: {label: 'Espresso', price: 1},
-          macchiato : {label: 'Macchiato ', price: 1},
+          latte: {label: 'Latte', price: 2, default: true},
+          cappuccino: {label: 'Cappuccino', price: 2},
+          espresso: {label: 'Espresso', price: 2},
+          macchiato : {label: 'Macchiato ', price: 2},
         },
       },
     },
   },
   pizza: {
-    name: 'Nonna Alba\'s Pizza',
-    price: 20,
-    description: 'The true taste of Italy &ndash; homemade pizza as prepared by our grandmothers in old-fashoned brick ovens. Choose your favorite topping and enjoy your comfort food! All ingredients come straight from eco-friendly, trusted farms in the Italian countryside.',
+    name: 'Brendan\'s Pizza',
+    price: 15,
+    description: 'The true taste of Italy &ndash; homemade pizza as prepared by our grandmothers in old-fashioned brick ovens. Choose your favorite topping and enjoy your comfort food! All ingredients come straight from eco-friendly, trusted farms in the Italian countryside.',
     images: [
       '<img class="active" src="images/pizza/crust.svg">',
       '<img class="sauce-tomato" src="images/pizza/tomato-sauce.svg">',
@@ -59,12 +59,12 @@ dataSource.products = {
         label: 'Toppings',
         type: 'checkboxes',
         options: {
-          olives: {label: 'Olives', price: 2, default: true},
+          olives: {label: 'Olives', price: 1, default: true},
           redPeppers: {label: 'Red peppers', price: 2, default: true},
           greenPeppers: {label: 'Green peppers', price: 2, default: true},
-          mushrooms: {label: 'Mushrooms', price: 2, default: true},
-          basil: {label: 'Fresh basil', price: 2, default: true},
-          freshTomato: {label: 'Fresh tomato', price: 3},
+          mushrooms: {label: 'Mushrooms', price: 1, default: true},
+          basil: {label: 'Fresh basil', price: 1, default: true},
+          freshTomato: {label: 'Fresh tomato', price: 2},
         },
       },
       crust: {
@@ -82,7 +82,7 @@ dataSource.products = {
     },
   },
   salad: {
-    name: 'Nonno Alberto\'s Salad',
+    name: 'Castle Salad',
     price: 9,
     description: 'A delicious salad made of fresh, home-grown products on a crispy lettuce base.',
     images: [

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pizzeria</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway:wght@200&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,13 +15,13 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="logo">
-          <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
-          <h2 class="logo__subtitle">the best vegan Italian food</h2>
+          <h1 class="logo__title"><span>Schloss Schönow</span></h1>
+          <h2 class="logo__subtitle">unique pizza from the pan</h2>
         </div>
         <div id="cart" class="cart">
           <div class="cart__summary">
             <span class="cart__total-number">0</span>
-            <span class="cart__total-price">Total price: <strong>$0</strong></span>
+            <span class="cart__total-price">Total price: <strong>€0</strong></span>
             <i class="fas fa-chevron-down"></i>
             <i class="fas fa-shopping-cart cart__icon"></i>
           </div>
@@ -32,15 +32,15 @@
               <ul class="cart__order-price">
                 <li>
                   <span class="cart__order-price-name">Subtotal:</span>
-                  <span class="cart__order-price-sum">$0</span>
+                  <span class="cart__order-price-sum">€0</span>
                 </li>
                 <li>
                   <span class="cart__order-price-name">Delivery:</span>
-                  <span class="cart__order-price-sum">$0</span>
+                  <span class="cart__order-price-sum">€0</span>
                 </li>
                 <li>
                   <span class="cart__order-price-name"><strong>Total:</strong></span>
-                  <span class="cart__order-price-sum"><strong>$0</strong></span>
+                  <span class="cart__order-price-sum"><strong>€0</strong></span>
                 </li>
               </ul>
               <div class="cart__order-confirmation">
@@ -62,7 +62,7 @@
 
           <header class="product__header">
             <h3 class="product__name no-spacing">{{ name }} <i class="fas fa-chevron-down product__icon"></i></h3>
-            <p class="product__base-price no-spacing">${{ price }}</p>
+            <p class="product__base-price no-spacing">€{{ price }}</p>
           </header>
           <div class="product__description"> <!-- description -->
             <p>{{{ description }}}</p>
@@ -79,7 +79,7 @@
                     <label>
                       <input type="checkbox" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
                       <span class="checkbox__checkmark"></span>
-                      {{{ label }}} (${{{ price }}})
+                      {{{ label }}} (€{{{ price }}})
                     </label>
                   </div>
                   {{/each}}
@@ -91,7 +91,7 @@
                   {{#each options}}
                   <div class="checkbox checkbox--round"> <!-- radio -->
                     <label>
-                      {{{ label }}} (${{{ price }}})
+                      {{{ label }}} (€{{{ price }}})
                       <input type="radio" name="{{ paramId }}" value="{{ @key }}" id="{{ @key }}" {{#if default}}checked{{/if}}>
                       <span class="checkbox__checkmark"></span>
                     </label>
@@ -104,7 +104,7 @@
                   <h3 class="product__params-title">{{{ label }}}</h3>
                   <select name="{{ paramId }}">
                     {{#each options}}
-                    <option value="{{ @key }}" {{#if default}}selected{{/if}}>{{{ label }}} (${{{ price }}})</option>
+                    <option value="{{ @key }}" {{#if default}}selected{{/if}}>{{{ label }}} (€{{{ price }}})</option>
                     {{/each}}
                   </select>
                 </li>
@@ -115,11 +115,11 @@
                 <div class="widget-amount"> <!-- widget-amount -->
                   <h3 class="product__params-title">Select quantity</h3>
                   <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-                  <input type="text" name="amount" value="1">
+                  <input type="text" name="amount">
                   <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
                 </div>
                 <p class="product__total-price">
-                  Total: $<span class="price">{{{ price }}}</span>
+                  Total: €<span class="price">{{{ price }}}</span>
                 </p>
                 <div> <!-- add-to-cart -->
                   <a class="btn-primary" href="#add-to-cart">Add to cart</a>
