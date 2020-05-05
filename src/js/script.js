@@ -196,6 +196,7 @@
       thisProduct.cartButton.addEventListener('click', function(event){
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
     }
 
@@ -218,11 +219,13 @@
       const formData = utils.serializeFormToObject(thisProduct.form);
       //console.log('formData', formData);
 
+      /* add empty object */
+      thisProduct.params = {};
+
       /* set variable price to equal thisProduct.data.price */
       let price = thisProduct.data.price;
 
       /* create params */
-      thisProduct.params = {};
       const paramsOfProduct = thisProduct.data.params;
 
       /* START LOOP: for each paramId in thisProduct.data.params */
@@ -297,11 +300,24 @@
       }
 
       /* multiply price by amount */
-      price *= thisProduct.amountWidget.value;
+      //price *= thisProduct.amountWidget.value;
+      thisProduct.priceSingle = price;
+      thisProduct.price = thisProduct.priceSingle * thisProduct.amountWidget.value;
 
       /* set the contents of thisProduct.priceElem to be the value of variable price */
-      thisProduct.priceElem.innerHTML = price
+      //thisProduct.priceElem.innerHTML = price;
+      thisProduct.priceElem.innerHTML = thisProduct.price;
     
+      console.log(thisProduct.params);
+    }
+
+    addToCart(){
+      const thisProduct = this;
+
+      thisProduct.name = thisProduct.data.name;
+      thisProduct.amount = thisProduct.amountWidget.value;
+
+      app.cart.add(thisProduct);
     }
   }
 
@@ -394,6 +410,8 @@
       thisCart.dom.wrapper = element;
 
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
+    
+      thisCart.dom.productList = document.querySelector(select.cart.productList);
     }
 
     initActions(){
@@ -403,6 +421,22 @@
 
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
+    }
+
+    add(menuProduct){
+      const thisCart = this;
+
+      console.log('adding product', menuProduct);
+
+      /* gen html based on template */
+      const generatedHTML = templates.cartProduct(menuProduct);
+
+      /* create DOM element using utils */
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+
+      /* add DOM to productList */
+
+      thisCart.dom.productList.appendChild(generatedDOM);
     }
   }
 
@@ -422,6 +456,13 @@
       thisApp.data = dataSource;
     },
 
+    initCart: function(){
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+    },
+
     init: function(){
       const thisApp = this;
       // console.log('*** App starting ***');
@@ -433,13 +474,6 @@
       thisApp.initData();
       thisApp.initMenu();
       thisApp.initCart();
-    },
-
-    initCart: function(){
-      const thisApp = this;
-
-      const cartElem = document.querySelector(select.containerOf.cart);
-      thisApp.cart = new Cart(cartElem);
     },
   };
 
