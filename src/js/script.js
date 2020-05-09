@@ -437,7 +437,8 @@
       });
 
       thisCart.dom.productList.addEventListener('remove', function(){
-        thisCart.remove();
+        //thisCart.remove();
+        thisCart.remove(event.detail.cartProduct);
       });
     }
 
@@ -494,8 +495,6 @@
 
       thisCart.products.splice(index,1);
 
-      CartProduct.dom.wrapper.remove();
-      
       thisCart.update();
     }
 
