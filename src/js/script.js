@@ -429,6 +429,10 @@
       }
 
       thisCart.dom.form = document.querySelector(select.cart.form);
+
+      thisCart.dom.phone = document.querySelector(select.cart.phone);
+
+      thisCart.dom.address = document.querySelector(select.cart.address);
     }
 
     initActions(){
@@ -518,8 +522,20 @@
       const url = settings.db.url + '/' + settings.db.order;
 
       const payload = {
-        address: 'test',
+        address: thisCart.dom.address,
+        phone: thisCart.dom.phone,
+        totalNumber: thisCart.totalNumber,
+        subtotalPrice: thisCart.subtotalPrice,
+        deliveryFee: thisCart.deliveryFee,
         totalPrice: thisCart.totalPrice,
+        products: [],
+      };
+
+      for(let singleProduct of thisCart.products){
+        
+        const singleProductData = singleProduct.getData();
+
+        payload.products.push(singleProductData);
       };
 
       const options = {
@@ -612,6 +628,20 @@
 
         thisCartProduct.remove();
       });
+    }
+
+    getData(){
+      const thisCartProduct = this;
+
+      const productData = {
+        id: thisCartProduct.id,
+        amount: thisCartProduct.amount,
+        price: thisCartProduct.price,
+        priceSingle: thisCartProduct.priceSingle,
+        params: thisCartProduct.params
+      };
+
+      return productData;
     }
   } 
 
