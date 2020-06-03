@@ -40,13 +40,13 @@ export class BaseWidget{
         console.log('widget value:', thisWidget.value);
     }
 
-    // announce(){
-    //     const thisWidget = this;
+    announce(){
+        const thisWidget = this;
 
-    //     const event = new CustomEvent('updated',{
-    //         bubbles: true
-    //     });
+        const event = new CustomEvent('updated',{
+            bubbles: true
+        });
 
-    //     thisWidget.dom.wrapper.dispatchEvent(event);
-    // }
+        thisWidget.dom.wrapper.dispatchEvent(event);
+    }
 }

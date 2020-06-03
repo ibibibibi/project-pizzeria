@@ -8,7 +8,7 @@ export class AmountWidget extends BaseWidget{
       const thisWidget = this;
 
       thisWidget.getElements();
-      // thisWidget.value = settings.amountWidget.defaultValue;
+      thisWidget.value = settings.amountWidget.defaultValue;
       // thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
 
@@ -50,6 +50,7 @@ export class AmountWidget extends BaseWidget{
       thisWidget.dom.input.addEventListener('change', function(){
         //thisWidget.setValue(thisWidget.input.value);
         thisWidget.value = thisWidget.dom.input.value;
+        console.log(thisWidget.input.value);
         }
       );
       
@@ -76,12 +77,12 @@ export class AmountWidget extends BaseWidget{
       thisWidget.dom.input.value = thisWidget.value;
     }
 
-    announce(){
-      const thisWidget = this;
+    // announce(){
+    //   const thisWidget = this;
 
-      const event = new CustomEvent('updated', {
-        bubbles: true
-      });
-      thisWidget.dom.wrapper.dispatchEvent(event);
-    }
+    //   const event = new CustomEvent('updated', {
+    //     bubbles: true
+    //   });
+    //   thisWidget.dom.wrapper.dispatchEvent(event);
+    // }
   }
