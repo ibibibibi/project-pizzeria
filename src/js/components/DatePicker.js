@@ -5,7 +5,9 @@ import {select, templates} from '../settings.js';
 export class DatePicker extends BaseWidget{
     constructor(wrapper){
         super (wrapper, utils.dateToStr(new Date()));
+
         const thisWidget = this;
+        
         thisWidget.dom = {};
         thisWidget.dom.wrapper  = wrapper;
         thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.datePicker.input);
