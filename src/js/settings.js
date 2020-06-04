@@ -23,21 +23,23 @@ export const select = {
     amountWidget: '.widget-amount',
     cartButton: '[href="#add-to-cart"]',
   },
+  datePicker: {
+    wrapper: '.date-picker',
+    input: `input[name="date"]`,
+  },
+  hourPicker: {
+    wrapper: '.hour-picker',
+    input: 'input[type="range"]',
+    output: '.output',
+  },
   widgets: {
     amount: {
       input: 'input.amount',
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
     },
-    datePicker: {
-      wrapper: '.date-picker',
-      input: `input[name="date"]`,
-    },
-    hourPicker: {
-      wrapper: '.hour-picker',
-      input: 'input[type="range"]',
-      output: '.output',
-    },
+ 
+ 
   },
   cart: {
     productList: '.cart__order-summary',
@@ -66,7 +68,7 @@ export const select = {
     links: '.main-nav a',
   },
 };
-
+ 
 export const classNames = {
   menuProduct: {
     wrapperActive: 'active',
@@ -86,7 +88,7 @@ export const classNames = {
     active: 'active',
   },
 };
-
+ 
 export const settings = {
   hours: {
     open: 12,
@@ -118,7 +120,7 @@ export const settings = {
     repeatParam: 'repeat_ne=false',
   },
 };
-
+ 
 export const templates = {
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
