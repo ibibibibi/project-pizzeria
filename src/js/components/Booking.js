@@ -68,12 +68,6 @@ export class Booking{
         }
     }
 
-    parseData(){
-        const thisBooking = this;
-
-        thisBooking.updateDOM();
-    }
-
     getData(){
         const thisBooking = this;
 
@@ -123,9 +117,51 @@ export class Booking{
 
         thisBooking.booked = {};
 
-        for (let event of thisBooking.booked){
+        console.log(thisBooking.booked, '@@@', bookings, eventsCurrent);
 
-            thisBooking.makeBooked();
+        for (let item of bookings){
+
+            thisBooking.makeBooked(item.date, item.hour, item.duration, item.table);
+        }
+
+        for (let item of eventsCurrent){
+            thisBooking.makeBooked(item.date, item.hour, item.duration, item.table);
+        }
+
+        const minDate = thisBooking.datePicker.minDate;
+
+        const maxDate = thisBooking.datePicker.maxDate;
+
+        for (let item of eventsRepeat){
+            if(item.repeat == 'daily'){
+                for(let loopDate = minDate; loopDate <= maxDate; loopDate = utils.addDays(loopDate, 1)){
+                    thisBooking.makeBooked(utils.dateToStr(loopDate), item.hour, item.duration, item.table);
+                }
+            }
+        }
+
+        thisBooking.updateDOM();
+    }
+
+    makeBooked(date, hour, duration, table){
+        console.log("MAKE BOOKED");
+
+        const thisBooking = this;
+        if (typeof thisBooking.booked[date] == 'undefined') {
+          thisBooking.booked[date] = {};
+        }
+    
+        const startHour = utils.hourToNumber(hour);
+
+        parseFloat(hour);
+        parseFloat(duration);
+    
+        for (let hourBlock = startHour; hourBlock < startHour + duration; hourBlock += 0.5) {
+          if (typeof thisBooking.booked[date][hourBlock] == 'undefined') {
+            thisBooking.booked[date][hourBlock] = [];
+          }
+          
+          thisBooking.booked[date][hourBlock].push(table);
         }
     }
 }
