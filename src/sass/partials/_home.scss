@@ -1,0 +1,135 @@
+.home-wrapper {
+    background-color: $color-light;
+    border-radius: $radius;
+    margin: ($base-size * 3.5) auto;
+    padding: ($base-size * 6) ($base-size * 4);
+    border-bottom: 1px solid lighten($color-dark, 70%);
+    max-width: 700px;
+  }
+  
+  .link-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-height: 120px;
+  }
+  
+  .link-button {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    h3 {
+      text-transform: uppercase;
+    }
+  }
+  
+  .link-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 2px;
+  }
+  
+  .title {
+    font-size: ($base-size * 2);
+    font-family: $font-header;
+    font-weight: $font-normal;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    animation-name: title;
+    animation-duration: 4s;
+  }
+  
+  .subtitle {
+    font-size: $base-size;
+    font-family: $font-text;
+    font-weight: $font-light;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    left: 18%;
+  }
+  
+  @keyframes title {
+    from {
+      transform: translateY(0px);
+    }
+  
+    to {
+      transform: translateY(-25px);
+    }
+  }
+  
+  @keyframes subtitle {
+    from {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(-65px);
+      opacity: 1;
+    }
+  }
+
+  .link-button:hover .title {
+    animation: title;
+    animation-duration: 1s;
+  }
+  
+  .link-button:hover .subtitle {
+    animation: subtitle;
+    animation-duration: 1s;
+  }
+
+  .hours {
+    background-color: $color-main;
+    height: 120px;
+    width: 100%;
+    border-radius: $radius;
+    text-align: center;
+    margin-top: 3px;
+  
+    .title-hour {
+      margin: 0 auto;
+      font-size: ($base-size * 2);
+      font-family: $font-header;
+      font-weight: $font-normal;
+      color: #fff;
+      padding-top: 28px;
+      text-transform: uppercase;
+    }
+  
+    .subtitle-hour {
+      margin: 0 auto;
+      font-family: $font-text;
+      font-weight: $font-normal;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: $base-size;
+    }
+  }
+
+.carousel-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  max-height: 200px;
+  margin-top: 100px;
+}
+
+.carousel-image {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  object-fit: cover;
+  position: relative;
+}

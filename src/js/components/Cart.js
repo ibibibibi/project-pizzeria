@@ -63,6 +63,7 @@ export class Cart{
       thisCart.dom.form.addEventListener('submit', function(event){
         event.preventDefault();
         thisCart.sendOrder();
+        alert('Hurray! Your order is successfully submitted.');
       });
     }
 
