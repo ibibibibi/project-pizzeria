@@ -67,6 +67,10 @@ export const select = {
   nav: {
     links: '.main-nav a',
   },
+  carousel: {
+    slides: '.slide',
+    points: '.fa-circle',
+  }
 };
  
 export const classNames = {
@@ -87,6 +91,12 @@ export const classNames = {
   pages: {
     active: 'active',
   },
+  slides: {
+    active: 'active',
+  },
+  points: {
+    active: 'active', 
+  }
 };
  
 export const settings = {
