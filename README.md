@@ -1,1 +1,1 @@
-https://schloss-schoenow.herokuapp.com/#booking
+https://schloss-schoenow.herokuapp.com/
