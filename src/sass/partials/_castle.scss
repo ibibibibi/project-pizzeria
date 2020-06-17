@@ -1,0 +1,48 @@
+.castle-wrapper{
+    background-color: $color-light;
+    border-radius: $radius;
+    margin: ($base-size * 3.5) auto;
+    padding: ($base-size * 6) ($base-size * 4);
+    border-bottom: 1px solid lighten($color-dark, 70%);
+    max-width: 700px;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+  
+.contact-button {
+    background-color: $color-dark;
+    width: 100%;
+    height: 120px;
+    color: #fff;
+    text-align: center;   
+
+    .contact-title {
+        font-size: ($base-size * 2);
+        font-family: $font-header;
+        font-weight: $font-normal;
+        text-transform: uppercase;
+        margin: 0 auto;
+        padding-top: 28px;
+    }
+    
+    p {
+        font-size: $base-size;
+        font-family: $font-text;
+        font-weight: $font-light;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    a {
+        color: $color-light;
+    }
+        
+    a:hover {
+        color: $color-main;
+    }
+}

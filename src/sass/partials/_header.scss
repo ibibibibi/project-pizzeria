@@ -16,9 +16,10 @@
   &__title {
     margin: 0 0 $base-size 0;
     font-size: ($base-size * 2.5);
-    font-family: $font-header;
-    font-weight: $font-light;
-    text-transform: uppercase;
+    font-style: italic;
+    color: $color-main;
+    font-family: 'IM Fell English', serif;
+    font-size: 40px;
 
     span {
       font-weight: $font-bold;

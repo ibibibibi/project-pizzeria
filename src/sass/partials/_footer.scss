@@ -1,0 +1,54 @@
+footer {
+    background: $color-dark;
+}
+.footer-wrapper{
+    color: $color-light;
+}
+
+.footer-name{
+    span{
+    font-style: italic;
+    color: $color-main;
+    font-family: 'IM Fell English', serif;
+    font-size: 20px;
+    }
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    
+    li {
+        list-style-type: none;
+        font-family: $font-normal;
+        
+        p{
+            margin: 5px;
+        }
+    }
+}
+
+.footer a {
+    color: $color-light;
+}
+    
+.footer a:hover {
+    color: $color-main;
+    text-decoration: none;
+}
+
+.tel{
+    span{
+    font-family: 'IM Fell English', serif;
+    color: $color-light;
+    font-size: 18px;
+    }   
+}
+.social-media{
+    padding-left: 24px;
+}
+
+.icon{
+    padding: 15px;
+}
