@@ -66,6 +66,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    anotherNavLinks: ['.order-link', '.book-link']
   },
   carousel: {
     slides: '.slide',

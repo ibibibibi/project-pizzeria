@@ -76,6 +76,7 @@ export class Booking{
         thisBooking.dom.wrapper.addEventListener('submit', function(){
         event.preventDefault();
         thisBooking.getData();
+        thisBooking.sendBooking();
         alert('Hurray! Your reservation is successfully submitted.');
         });
     }
@@ -248,6 +249,5 @@ export class Booking{
         }).then(function(parsedResponse){
             console.log('parsedResponseBooking', parsedResponse);
         });
-
     }
 }

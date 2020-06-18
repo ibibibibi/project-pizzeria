@@ -92,6 +92,7 @@
   .link-button:hover .subtitle {
     animation: subtitle;
     animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
 
   /*HOURS*/
